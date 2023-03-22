@@ -15,4 +15,5 @@ public class Peasant extends BaseHero{
         return "Крестьянин"+ " " + this.name;
     }
     
+    
 }

@@ -23,4 +23,5 @@ public class Monk extends MagicHero {
     }
 
     
+    
 }

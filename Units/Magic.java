@@ -16,4 +16,6 @@ public class Magic extends MagicHero {
     public String getInfo() {
         return "Маг"+ " " + this.name;
     }
+
+    
 }

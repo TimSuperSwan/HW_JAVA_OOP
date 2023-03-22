@@ -1,5 +1,7 @@
 package Units;
 
+import java.util.ArrayList;
+
 public abstract class MagicHero extends BaseHero {
 
     protected Integer mana;
@@ -16,6 +18,11 @@ public abstract class MagicHero extends BaseHero {
 
     public void setMana(Integer mana) {
         this.mana = mana;
+    }
+
+    @Override
+    public void step(ArrayList<BaseHero> enemies){
+        System.out.println("лечу");
     }
 
 }

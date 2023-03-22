@@ -15,4 +15,6 @@ public class Robber extends BaseHero {
     public String getInfo() {
         return "Разбойник"+ " " + this.name;
     }
+
+    
 }

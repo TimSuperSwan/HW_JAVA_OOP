@@ -11,6 +11,7 @@ public class Archer extends ShooterHero {
         super(200, maxHp, 7, 3, 5, 1, 10, 2, 1, name);
     }
 
+    
     @Override
     public String getInfo() {
         // TODO Auto-generated method stub

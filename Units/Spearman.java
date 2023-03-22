@@ -14,4 +14,6 @@ public class Spearman extends BaseHero{
     public String getInfo() {
         return "Копейщик"+ " " + this.name;
     }
+
+    
 }

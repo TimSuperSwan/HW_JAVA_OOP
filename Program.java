@@ -57,7 +57,8 @@ public class Program {
         }
 
         SortingBySpeed(firstTeam, secondTeam);
-
+        firstTeam.forEach(h -> h.step(secondTeam));
+        secondTeam.forEach(t -> t.step(firstTeam));
         
         // System.out.println("Первая команда");
         // for (int index = 0; index < 10; index++) {
@@ -79,10 +80,10 @@ public class Program {
         list.addAll(list1);
         list.addAll(list2);
         
-        System.out.println("До сортировки\n\n");
-        for (int index = 0; index < 20; index++) {
-            System.out.println(list.get(index).getInfo());
-        }
+        // System.out.println("До сортировки\n\n");
+        // for (int index = 0; index < 20; index++) {
+        //     System.out.println(list.get(index).getInfo());
+        // }
 
         list.sort(new Comparator<BaseHero>(){
             @Override
@@ -99,10 +100,10 @@ public class Program {
             }
         });
 
-        System.out.println("После сортировки\n\n");
-        for (int index = 0; index < 20; index++) {
-            System.out.println(list.get(index).getInfo());
-        }
+        // System.out.println("После сортировки\n\n");
+        // for (int index = 0; index < 20; index++) {
+        //     System.out.println(list.get(index).getInfo());
+        // }
     }
 
 

@@ -1,4 +1,5 @@
 package Units;
+import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class BaseHero implements Actions{
@@ -34,8 +35,8 @@ public abstract class BaseHero implements Actions{
 
     
     @Override
-    public void step() {
-        // заглушка
+    public void step(ArrayList<BaseHero> enemies) {
+        System.out.println("шаг заглушка");
         
     }
 

@@ -1,5 +1,7 @@
 package Units;
 
+import java.util.ArrayList;
+
 public abstract class ShooterHero extends BaseHero{
     
     protected Integer bulletCount;
@@ -21,8 +23,10 @@ public abstract class ShooterHero extends BaseHero{
     }
 
     @Override
-    public void step(){
-        
+    public void step(ArrayList<BaseHero> enemies){
+        if (this.bulletCount > 0 && this.hp>0) {
+            System.out.println(this.getInfo() + " " + "Могу стрелять");
+        }
     }
 
 
