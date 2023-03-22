@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 import Units.*;
@@ -24,56 +25,85 @@ public class Program {
         ArrayList<BaseHero> secondTeam = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            switch (r.nextInt(7)) {
+            switch (r.nextInt(4)) {
                 case 0:
-
-                    firstTeam.add(new Archer("name"));
+                    firstTeam.add(new Archer(BaseHero.generateName()));
                     break;
                 case 1:
-                    firstTeam.add(new Crossbowman("name"));
+                    firstTeam.add(new Magic(BaseHero.generateName()));
+                    break;
                 case 2:
-                    firstTeam.add(new Magic("name"));
-                case 3:
-                    firstTeam.add(new Monk("name"));
-                case 4:
-                    firstTeam.add(new Peasant("name"));
-                case 5:
-                    firstTeam.add(new Robber("name"));
+                    firstTeam.add(new Peasant(BaseHero.generateName()));
+                    break;
                 default:
-                    firstTeam.add(new Spearman("name"));
+                    firstTeam.add(new Robber(BaseHero.generateName()));
                     break;
             }
-            switch (r.nextInt(7)) {
+            switch (r.nextInt(4)) {
                 case 0:
-                    secondTeam.add(new Archer("name"));
+                    secondTeam.add(new Crossbowman(BaseHero.generateName()));
                     break;
                 case 1:
-                    secondTeam.add(new Crossbowman("name"));
+                    secondTeam.add(new Monk(BaseHero.generateName()));
+                    break;
                 case 2:
-                    secondTeam.add(new Magic("name"));
-                case 3:
-                    secondTeam.add(new Monk("name"));
-                case 4:
-                    secondTeam.add(new Peasant("name"));
-                case 5:
-                    secondTeam.add(new Robber("name"));
+                    secondTeam.add(new Peasant(BaseHero.generateName()));
+                    break;
                 default:
-                    secondTeam.add(new Spearman("name"));
+                    secondTeam.add(new Spearman(BaseHero.generateName()));
                     break;
             }
 
         }
-        System.out.println("Первая команда");
-        for (int index = 0; index < 10; index++) {
-            System.out.println(firstTeam.get(index).getInfo());
-        }
 
-        System.out.println( );
-        System.out.println("Вторая команда");
-        for (int index = 0; index < 10; index++) {
-            System.out.println(firstTeam.get(index).getInfo());
-        }
+        SortingBySpeed(firstTeam, secondTeam);
+
+        
+        // System.out.println("Первая команда");
+        // for (int index = 0; index < 10; index++) {
+        //     System.out.println(firstTeam.get(index).getInfo());
+        // }
+
+        // System.out.println( );
+        // System.out.println("Вторая команда");
+        // for (int index = 0; index < 10; index++) {
+        //     System.out.println(secondTeam.get(index).getInfo());
+        // }
+
 
     }
+    
+
+    public static void SortingBySpeed(ArrayList<BaseHero> list1, ArrayList<BaseHero> list2){
+        ArrayList<BaseHero> list = new ArrayList<>();
+        list.addAll(list1);
+        list.addAll(list2);
+        
+        System.out.println("До сортировки\n\n");
+        for (int index = 0; index < 20; index++) {
+            System.out.println(list.get(index).getInfo());
+        }
+
+        list.sort(new Comparator<BaseHero>(){
+            @Override
+            public int compare (BaseHero h1, BaseHero h2){
+                if (h1.getSpeed()== h2.getSpeed()) {
+                    return 0;
+                }
+                else if (h1.getSpeed() > h2.getSpeed()) {
+                    return 1;
+                }
+                else{
+                    return -1;
+                }
+            }
+        });
+
+        System.out.println("После сортировки\n\n");
+        for (int index = 0; index < 20; index++) {
+            System.out.println(list.get(index).getInfo());
+        }
+    }
+
 
 }

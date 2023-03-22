@@ -13,7 +13,7 @@ public class Monk extends MagicHero {
 
     @Override
     public String getInfo() {
-        return "Монах";
+        return "Монах"+ " " + this.name;
     }
 
     @Override

@@ -14,6 +14,6 @@ public class Magic extends MagicHero {
 
     @Override
     public String getInfo() {
-        return "Маг";
+        return "Маг"+ " " + this.name;
     }
 }

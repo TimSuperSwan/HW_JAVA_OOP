@@ -1,4 +1,5 @@
 package Units;
+import java.util.Random;
 
 public abstract class BaseHero implements Actions{
     protected Integer hp;
@@ -38,12 +39,19 @@ public abstract class BaseHero implements Actions{
         
     }
 
+    
+
+    public static String generateName() {
+        return Names.values()[new Random().nextInt(Names.values().length)].toString();
+    }
 
     @Override
     public String toString() {
         return "BaseHero [hp=" + hp + ", name=" + name + ", power=" + power + ", agility=" + agility + ", speed="
                 + speed + ", level=" + level + "]";
     }
+
+    
 
 
     public Integer getHp() {
@@ -54,9 +62,7 @@ public abstract class BaseHero implements Actions{
         return name;
     }
 
-    public Integer getMaxHp() {
-        return maxHp;
-    }
+    
 
     public Integer getPower() {
         return power;
@@ -92,6 +98,11 @@ public abstract class BaseHero implements Actions{
 
     public void setLevel(Integer level) {
         this.level = level;
+    }
+
+
+    public static Integer getMaxHp() {
+        return maxHp;
     }
 
 }

@@ -13,6 +13,6 @@ public class Robber extends BaseHero {
 
     @Override
     public String getInfo() {
-        return "Разбойник";
+        return "Разбойник"+ " " + this.name;
     }
 }

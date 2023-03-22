@@ -14,8 +14,28 @@ public class Archer extends ShooterHero {
     @Override
     public String getInfo() {
         // TODO Auto-generated method stub
-        return "Лучник";
+        return "Лучник"+ " " + this.name;
     }
+
+    public Integer getBulletCount() {
+        return bulletCount;
+    }
+    public void setBulletCount(Integer bulletCount) {
+        this.bulletCount = bulletCount;
+    }
+    public Integer getRange() {
+        return range;
+    }
+    public void setRange(Integer range) {
+        this.range = range;
+    }
+    public Integer getAccuracy() {
+        return accuracy;
+    }
+    public void setAccuracy(Integer accuracy) {
+        this.accuracy = accuracy;
+    }
+    
 
         
     

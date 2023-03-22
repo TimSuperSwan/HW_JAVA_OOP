@@ -19,24 +19,13 @@ public abstract class ShooterHero extends BaseHero{
         this.range = range;
         this.accuracy = accuracy;
     }
-public Integer getBulletCount() {
-    return bulletCount;
-}
-public void setBulletCount(Integer bulletCount) {
-    this.bulletCount = bulletCount;
-}
-public Integer getRange() {
-    return range;
-}
-public void setRange(Integer range) {
-    this.range = range;
-}
-public Integer getAccuracy() {
-    return accuracy;
-}
-public void setAccuracy(Integer accuracy) {
-    this.accuracy = accuracy;
-}
+
+    @Override
+    public void step(){
+        
+    }
+
+
 
     
 }

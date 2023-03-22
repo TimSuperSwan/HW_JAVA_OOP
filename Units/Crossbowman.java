@@ -13,9 +13,26 @@ public class Crossbowman extends ShooterHero{
 
     @Override
     public String getInfo() {
-        return "Арбалетчик";
+        return "Арбалетчик"+ " " + this.name;
     }
     
-
+    public Integer getBulletCount() {
+        return bulletCount;
+    }
+    public void setBulletCount(Integer bulletCount) {
+        this.bulletCount = bulletCount;
+    }
+    public Integer getRange() {
+        return range;
+    }
+    public void setRange(Integer range) {
+        this.range = range;
+    }
+    public Integer getAccuracy() {
+        return accuracy;
+    }
+    public void setAccuracy(Integer accuracy) {
+        this.accuracy = accuracy;
+    }
 
 }
