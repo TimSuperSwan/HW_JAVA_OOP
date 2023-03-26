@@ -6,9 +6,9 @@ public abstract class MagicHero extends BaseHero {
 
     protected Integer mana;
 
-    public MagicHero(Integer hp, Integer maxHp, Integer power, Integer agility, Integer speed,
-            Integer level, Integer mana, String name) {
-        super(hp, maxHp, power, agility, speed, level, name);
+    public MagicHero(float hp, float maxHp, Integer power, float damage, Integer agility, Integer speed,
+            Integer level, Integer mana, String name, Integer x, Integer y) {
+        super(hp, maxHp, power, damage, agility, speed, level, name, x, y);
         this.mana = mana;
     }
 
@@ -21,7 +21,7 @@ public abstract class MagicHero extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> enemies){
+    public void step(ArrayList<BaseHero> enemies, ArrayList<BaseHero> friends){
         System.out.println("лечу");
     }
 

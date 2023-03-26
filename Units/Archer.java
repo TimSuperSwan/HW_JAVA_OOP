@@ -2,24 +2,32 @@ package Units;
 
 public class Archer extends ShooterHero {
 
-    public Archer(Integer hp, Integer maxHp, Integer power, Integer agility, Integer speed, Integer level,
-            Integer bulletCount, Integer range, Integer accuracy, String name) {
-        super(hp, maxHp, power, agility, speed, level, bulletCount, range, accuracy, name);
+    // public Coordinates coordinata = new Coordinates(0, 0);
+    // protected Integer x; 
+    // protected Integer y; 
+
+    public Archer(float hp, float maxHp, Integer power, float damage, Integer agility, Integer speed, Integer level,
+            Integer bulletCount, Integer accuracy, String name, Integer x, Integer y) {
+        super(hp, maxHp, power, damage, agility, speed, level, bulletCount, accuracy, name,x,y);
+
+        }
+
+    public Archer( String name, Integer x, Integer y) {
+        super(15, 15, 12,9, 10, 9, 1, 32, 1, name,x,y);
+        this.coordinata.setX(x);
+        this.coordinata.setY(y);
     }
 
-    public Archer( String name) {
-        super(200, maxHp, 7, 3, 5, 1, 10, 2, 1, name);
-    }
-
+    
     
     @Override
     public String getInfo() {
         // TODO Auto-generated method stub
-        return "Лучник"+ " " + this.name;
+        return "Лучник"+ " " + this.name + "  " + this.coordinata.getX() + "," + this.coordinata.getY();
     }
 
     public Integer getBulletCount() {
-        return bulletCount;
+        return this.bulletCount;
     }
     public void setBulletCount(Integer bulletCount) {
         this.bulletCount = bulletCount;
@@ -36,6 +44,12 @@ public class Archer extends ShooterHero {
     public void setAccuracy(Integer accuracy) {
         this.accuracy = accuracy;
     }
+
+    public Coordinates getCoordinata() {
+        return coordinata;
+    }
+
+    
     
 
         

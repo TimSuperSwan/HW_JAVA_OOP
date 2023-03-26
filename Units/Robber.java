@@ -2,18 +2,20 @@ package Units;
 
 public class Robber extends BaseHero {
 
-    public Robber(Integer hp, Integer maxHp, Integer power, Integer agility, Integer speed, Integer level,
-            String name) {
-        super(hp, maxHp, power, agility, speed, level, name);
+    public Robber(float hp, float maxHp, Integer power, float damage, Integer agility, Integer speed, Integer level,
+            String name, Integer x, Integer y) {
+        super(hp, maxHp, power, damage, agility, speed, level, name,x,y);
     }
 
-    public Robber(String name) {
-        super(200, maxHp, 20, 7, 5, 1, name);
+    public Robber(String name, Integer x, Integer y) {
+        super(10, 10, 8,3, 3, 6, 1, name,x,y);
+        this.coordinata.setX(x);
+        this.coordinata.setY(y);
     }
 
     @Override
     public String getInfo() {
-        return "Разбойник"+ " " + this.name;
+        return "Разбойник"+ " " + this.name + "  " + coordinata.getX() + "," + coordinata.getY();
     }
 
     

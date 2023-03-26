@@ -4,75 +4,80 @@ import java.util.Random;
 
 import Units.*;
 
-/*Добавить файл с описанием интерфейса. В котором описать два метода, void step(); и String getInfo(); 
-Реализовать интерфейсs в абстрактном классе и в наследниках так, 
-чтобы getInfo возвращал тип персонажа. Создать два списка в классе main. 
-В кждый из списков добавить по десять экземнляров наследников BaseHero. 
-Удалить ненужные методы из абстрактного класса, если такие есть. 
-В main пройти по спискам и вызвать у всех персонажей getInfo. */
 
 public class Program {
+
+    public static final int unitsNumber = 10;
     public static void main(String[] args) {
         Random r = new Random();
 
-        // Peasant peasant = new Peasant("Вася");
-        // System.out.println(peasant.getInfo());
-
-        // Monk monk = new Monk("Петя");
-        // System.out.println(monk.toString());
-
+        
         ArrayList<BaseHero> firstTeam = new ArrayList<>();
         ArrayList<BaseHero> secondTeam = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < unitsNumber; i++) {
+            int y = i;
             switch (r.nextInt(4)) {
                 case 0:
-                    firstTeam.add(new Archer(BaseHero.generateName()));
+                    firstTeam.add(new Archer(BaseHero.generateName(),0, y));
                     break;
                 case 1:
-                    firstTeam.add(new Magic(BaseHero.generateName()));
+                    firstTeam.add(new Magic(BaseHero.generateName(),0,y));
                     break;
                 case 2:
-                    firstTeam.add(new Peasant(BaseHero.generateName()));
+                    firstTeam.add(new Peasant(BaseHero.generateName(),0, y));
                     break;
                 default:
-                    firstTeam.add(new Robber(BaseHero.generateName()));
+                    firstTeam.add(new Robber(BaseHero.generateName(),0,y));
                     break;
             }
             switch (r.nextInt(4)) {
                 case 0:
-                    secondTeam.add(new Crossbowman(BaseHero.generateName()));
+                    secondTeam.add(new Crossbowman(BaseHero.generateName(),9,y));
                     break;
                 case 1:
-                    secondTeam.add(new Monk(BaseHero.generateName()));
+                    secondTeam.add(new Monk(BaseHero.generateName(),9,y));
                     break;
                 case 2:
-                    secondTeam.add(new Peasant(BaseHero.generateName()));
+                    secondTeam.add(new Peasant(BaseHero.generateName(),9,y));
                     break;
                 default:
-                    secondTeam.add(new Spearman(BaseHero.generateName()));
+                    secondTeam.add(new Spearman(BaseHero.generateName(),9,y));
                     break;
             }
 
         }
-
-        SortingBySpeed(firstTeam, secondTeam);
-        firstTeam.forEach(h -> h.step(secondTeam));
-        secondTeam.forEach(t -> t.step(firstTeam));
+        System.out.println("__________________Команда2_________________________________");
+       for (int i = 0; i < 10; i++) {
+            System.out.println(secondTeam.get(i).toString() + "___" + secondTeam.get(i).getInfo());
+       }
+    //    System.out.println("____________________Команда1_______________________________");
+    //    for (int i = 0; i < 10; i++) {
+    //     System.out.println(firstTeam.get(i).toString() + "___" + firstTeam.get(i).getInfo());
         
-        // System.out.println("Первая команда");
-        // for (int index = 0; index < 10; index++) {
-        //     System.out.println(firstTeam.get(index).getInfo());
-        // }
+//    }
+        
 
-        // System.out.println( );
-        // System.out.println("Вторая команда");
-        // for (int index = 0; index < 10; index++) {
-        //     System.out.println(secondTeam.get(index).getInfo());
-        // }
+        
+        // firstTeam.forEach(h -> h.step(secondTeam, firstTeam));
+        
+        BaseHero Vasia = new Archer("Вася", 0, 7);
+        BaseHero Petia = new Archer("Петя", 9, 2);
+        // System.out.println(Petia.toString());
+        System.out.println(Vasia.toString());
+       
+        
 
+        
+        Vasia.step(secondTeam, secondTeam);
+
+        System.out.println("__________________Команда2_________________________________");
+       for (int i = 0; i < 10; i++) {
+            System.out.println(secondTeam.get(i).toString() + "___" + secondTeam.get(i).getInfo());
+       }
 
     }
+    
     
 
     public static void SortingBySpeed(ArrayList<BaseHero> list1, ArrayList<BaseHero> list2){
