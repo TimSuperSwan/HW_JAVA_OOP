@@ -15,6 +15,12 @@ public class Coordinates {
         this.y = y;
     }
 
+    public boolean isEquals(Coordinates coordinates) {
+        if ((coordinates.x == this.x) & (coordinates.y == this.y))
+            return true;
+        else
+            return false;
+    }
     
 
     @Override
@@ -36,9 +42,7 @@ public class Coordinates {
     public String getHeroName() {
         return heroName;
     }
-    public void setHeroName(String heroName) {
-        this.heroName = heroName;
-    }
+    
 
 
 

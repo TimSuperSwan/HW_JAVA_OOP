@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class BaseHero implements Actions{
-    protected float hp;
+    public float hp;
     protected String name;
     protected static float maxHp;
     protected Integer power;
@@ -37,6 +37,7 @@ public abstract class BaseHero implements Actions{
         this.agility = agility;
         this.speed = speed;
         this.level = level;
+        Coordinates coordinata = new Coordinates(x, y);
     }
 
     public double getDistance(BaseHero enemy) {
@@ -45,7 +46,12 @@ public abstract class BaseHero implements Actions{
 
     @Override
     public void attack (BaseHero enemy){
-        enemy.hp -= this.getDamage();
+        if (enemy.hp > this.getDamage()) {
+            enemy.hp -= this.getDamage();
+        } 
+        else{
+            enemy.hp = 0;
+        }
     }
 
     public BaseHero findClosest(ArrayList<BaseHero> enemies){
@@ -61,8 +67,7 @@ public abstract class BaseHero implements Actions{
             }
         }
         
-        // System.out.println("Ближайший враг:____" + closestEnemy.getInfo());
-        // System.out.println(this.getDistance(closestEnemy) + "  от " + this.getInfo() + " до " + closestEnemy.getInfo());
+       
         return closestEnemy;
     }
 
@@ -105,7 +110,9 @@ public abstract class BaseHero implements Actions{
         return name;
     }
 
-    
+    public Coordinates getCoordinates() {
+        return coordinata;
+    }
 
     public Integer getPower() {
         return power;
