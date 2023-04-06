@@ -1,4 +1,7 @@
 package Units;
+
+import java.util.ArrayList;
+
 public class Spearman extends BaseHero{
 
     public Spearman(float hp, float maxHp, Integer power, float damage,Integer agility, Integer speed, Integer level,
@@ -17,6 +20,31 @@ public class Spearman extends BaseHero{
     @Override
     public String getInfo() {
         return "Копейщик"+ " " + this.name + "  " + coordinata.getX() + "," + coordinata.getY();
+    }
+
+    @Override
+    public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> friends){
+        if (this.agility > 0 && this.hp > 0) {
+    
+            BaseHero target = null;
+            double minDistance = Double.MAX_VALUE;
+
+            for (BaseHero unit : team) {
+                if(this.getDistance(unit)<minDistance && unit.hp>0){
+                    minDistance = this.getDistance(unit);
+                    target = unit;
+                }
+
+            }
+            // System.out.printf("%s выбрал %s\n", this.getClass().getSimpleName(), target.getClass().getSimpleName());
+            if(this.getDistance(target)>=2){
+                this.coordinata.direction(target.coordinata, friends);
+            }
+            else if(target.hp > 0){
+                this.attack(target);
+                this.agility--;
+            }
+        }
     }
 
     

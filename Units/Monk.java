@@ -10,7 +10,7 @@ public class Monk extends MagicHero {
     }
 
     public Monk(String name, Integer x, Integer y) {
-        super(30, 30, 5,-4, 7, 5, 1, 1, name,x,y);
+        super(8, 8, 5,-4, 7, 5, 1, 1, name,x,y);
         this.coordinata.setX(x);
         this.coordinata.setY(y);
     }

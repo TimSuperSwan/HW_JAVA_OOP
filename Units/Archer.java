@@ -13,7 +13,7 @@ public class Archer extends ShooterHero {
         }
 
     public Archer( String name, Integer x, Integer y) {
-        super(15, 15, 12,9, 10, 9, 1, 32, 1, name,x,y);
+        super(15, 15, 12,1, 10, 9, 1, 32, 1, name,x,y);
         this.coordinata.setX(x);
         this.coordinata.setY(y);
     }

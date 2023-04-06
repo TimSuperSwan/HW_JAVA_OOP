@@ -5,7 +5,7 @@ import java.util.Random;
 public abstract class BaseHero implements Actions{
     public float hp;
     protected String name;
-    protected static float maxHp;
+    protected float maxHp;
     protected Integer power;
     protected Integer agility;
     protected Integer speed;
@@ -37,7 +37,7 @@ public abstract class BaseHero implements Actions{
         this.agility = agility;
         this.speed = speed;
         this.level = level;
-        Coordinates coordinata = new Coordinates(x, y);
+        //Coordinates coordinata = new Coordinates(x, y);
     }
 
     public double getDistance(BaseHero enemy) {
@@ -46,7 +46,7 @@ public abstract class BaseHero implements Actions{
 
     @Override
     public void attack (BaseHero enemy){
-        if (enemy.hp > this.getDamage()) {
+        if (enemy.hp >= this.getDamage()) {
             enemy.hp -= this.getDamage();
         } 
         else{
@@ -58,7 +58,7 @@ public abstract class BaseHero implements Actions{
         double minDist = this.getDistance(enemies.get(9));
         BaseHero closestEnemy = enemies.get(9);
         for (BaseHero enemy : enemies) {
-            if ((this.getDistance(enemy) < minDist)) {
+            if ((this.getDistance(enemy) < minDist) && enemy.isAlive()) {
                 minDist = this.getDistance(enemy);
                 closestEnemy = enemy;
                 System.out.println("Нашел ближайшего, расстояние от" + enemy.getInfo() + " до "+ this.getInfo() + "  " + this.getDistance(enemy));
@@ -83,7 +83,7 @@ public abstract class BaseHero implements Actions{
     
     @Override
     public void step(ArrayList<BaseHero> enemies, ArrayList<BaseHero> friends) {
-        System.out.println("шаг заглушка");
+        //заглушка
         
     }
 
@@ -151,7 +151,7 @@ public abstract class BaseHero implements Actions{
     }
 
 
-    public static float getMaxHp() {
+    public float getMaxHp() {
         return maxHp;
     }
 

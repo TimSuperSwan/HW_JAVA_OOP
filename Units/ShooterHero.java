@@ -24,7 +24,7 @@ public abstract class ShooterHero extends BaseHero{
     public void step(ArrayList<BaseHero> enemies, ArrayList<BaseHero> friends){
         if (this.bulletCount > 0 && this.hp>0) {
             this.attack(this.findClosest(enemies));
-            System.out.println("_____УРОН НАНЕСЕН ОТ " + this.getInfo() + " к " + this.findClosest(enemies).getInfo());
+            //System.out.println("_____УРОН НАНЕСЕН ОТ " + this.getInfo() + " к " + this.findClosest(enemies).getInfo());
             
         }
         

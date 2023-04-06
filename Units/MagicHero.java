@@ -21,8 +21,20 @@ public abstract class MagicHero extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> enemies, ArrayList<BaseHero> friends){
-        System.out.println("лечу");
+    public void step(ArrayList<BaseHero> enemies, ArrayList<BaseHero> friends) {
+        if (this.mana > 0 && this.hp > 0) {
+
+            for (BaseHero unit : friends) {
+                if (unit.hp > 0 && unit.hp < unit.maxHp) {
+                    this.attack(unit);
+                    if (unit.hp > unit.maxHp) {
+                        unit.hp = unit.maxHp;
+                    }
+                    break;
+                }
+            }
+            this.mana--;
+        }
     }
 
 }

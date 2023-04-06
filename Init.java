@@ -10,30 +10,30 @@ public class Init {
             int y = i;
             switch (r.nextInt(4)) {
                 case 0:
-                    Program.firstTeam.add(new Archer(BaseHero.generateName(),1, y));
+                    Program.firstTeam.add(new Archer(BaseHero.generateName(),1, y+1));
                     break;
                 case 1:
-                    Program.firstTeam.add(new Magic(BaseHero.generateName(),1,y));
+                    Program.firstTeam.add(new Magic(BaseHero.generateName(),1,y+1));
                     break;
                 case 2:
-                    Program.firstTeam.add(new Peasant(BaseHero.generateName(),1, y));
+                    Program.firstTeam.add(new Peasant(BaseHero.generateName(),1, y+1));
                     break;
                 default:
-                    Program.firstTeam.add(new Robber(BaseHero.generateName(),1,y));
+                    Program.firstTeam.add(new Robber(BaseHero.generateName(),1,y+1));
                     break;
             }
             switch (r.nextInt(4)) {
                 case 0:
-                    Program.secondTeam.add(new Crossbowman(BaseHero.generateName(),10,y));
+                    Program.secondTeam.add(new Crossbowman(BaseHero.generateName(),10,y+1));
                     break;
                 case 1:
-                    Program.secondTeam.add(new Monk(BaseHero.generateName(),10,y));
+                    Program.secondTeam.add(new Monk(BaseHero.generateName(),10,y+1));
                     break;
                 case 2:
-                    Program.secondTeam.add(new Peasant(BaseHero.generateName(),10,y));
+                    Program.secondTeam.add(new Peasant(BaseHero.generateName(),10,y+1));
                     break;
                 default:
-                Program.secondTeam.add(new Spearman(BaseHero.generateName(),10,y));
+                Program.secondTeam.add(new Spearman(BaseHero.generateName(),10,y+1));
                     break;
             }
         }

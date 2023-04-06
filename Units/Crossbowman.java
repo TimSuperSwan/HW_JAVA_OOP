@@ -10,7 +10,7 @@ public class Crossbowman extends ShooterHero{
     }
 
     public Crossbowman(String name, Integer x, Integer y) {
-        super(10, 10, 6, 6, 3, 4, 1, 16, 2, name,x,y);
+        super(10, 10, 6, 2, 3, 4, 1, 16, 2, name,x,y);
         this.coordinata.setX(x);
         this.coordinata.setY(y);
     }

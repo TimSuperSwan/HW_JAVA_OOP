@@ -10,7 +10,7 @@ public class Magic extends MagicHero {
     }
 
     public Magic(String name, Integer x, Integer y) {
-        super(30, 30, 17,-5, 12, 9, 1,1, name,x,y);
+        super(11, 11, 17,-5, 12, 9, 1,1, name,x,y);
         this.coordinata.setX(x);
         this.coordinata.setY(y);
         
