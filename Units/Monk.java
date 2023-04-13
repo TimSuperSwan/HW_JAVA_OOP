@@ -17,7 +17,7 @@ public class Monk extends MagicHero {
 
     @Override
     public String getInfo() {
-        return "Монах"+ " " + this.name + "  " + coordinata.getX() + "," + coordinata.getY();
+        return "Монах"+ " " + this.name + " |Hp - " + this.hp;
     }
 
    

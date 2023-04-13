@@ -10,27 +10,27 @@ public class Robber extends BaseHero {
     }
 
     public Robber(String name, Integer x, Integer y) {
-        super(10, 10, 8,3, 3, 6, 1, name,x,y);
+        super(8, 8, 8,3, 3, 6, 1, name,x,y);
         this.coordinata.setX(x);
         this.coordinata.setY(y);
     }
 
 
     @Override
-    public void step(ArrayList<BaseHero> team, ArrayList<BaseHero> friends){
+    public void step(ArrayList<BaseHero> enemies, ArrayList<BaseHero> friends){
         if (this.agility > 0 && this.hp > 0) {
     
             BaseHero target = null;
             double minDistance = Double.MAX_VALUE;
 
-            for (BaseHero unit : team) {
-                if(this.getDistance(unit)<minDistance && unit.hp>0){
-                    minDistance = this.getDistance(unit);
-                    target = unit;
+            for (BaseHero enemy : enemies) {
+                if(this.getDistance(enemy)<minDistance && enemy.hp>0){
+                    minDistance = this.getDistance(enemy);
+                    target = enemy;
                 }
 
             }
-            // System.out.printf("%s выбрал %s\n", this.getClass().getSimpleName(), target.getClass().getSimpleName());
+            
             if(this.getDistance(target)>=2){
                 this.coordinata.direction(target.coordinata, friends);
             }
@@ -43,7 +43,7 @@ public class Robber extends BaseHero {
     
     @Override
     public String getInfo() {
-        return "Разбойник"+ " " + this.name + "  " + coordinata.getX() + "," + coordinata.getY();
+        return "Разбойник"+ " " + this.name + " |Hp - " + this.hp;
     }
 
     

@@ -17,7 +17,7 @@ public class Peasant extends BaseHero{
 
     @Override
     public String getInfo() {
-        return "Крестьянин"+ " " + this.name + "  " + coordinata.getX() + "," + coordinata.getY();
+        return "Крестьянин"+ " " + this.name + " |Hp - " + this.hp;
     }
     
     

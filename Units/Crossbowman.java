@@ -10,33 +10,14 @@ public class Crossbowman extends ShooterHero{
     }
 
     public Crossbowman(String name, Integer x, Integer y) {
-        super(10, 10, 6, 2, 3, 4, 1, 16, 2, name,x,y);
+        super(10, 10, 6, 7, 3, 4, 1, 16, 2, name,x,y);
         this.coordinata.setX(x);
         this.coordinata.setY(y);
     }
 
     @Override
     public String getInfo() {
-        return "Арбалетчик"+ " " + this.name + "  " + coordinata.getX() + "," + coordinata.getY();
-    }
-    
-    public Integer getBulletCount() {
-        return bulletCount;
-    }
-    public void setBulletCount(Integer bulletCount) {
-        this.bulletCount = bulletCount;
-    }
-    public Integer getRange() {
-        return range;
-    }
-    public void setRange(Integer range) {
-        this.range = range;
-    }
-    public Integer getAccuracy() {
-        return accuracy;
-    }
-    public void setAccuracy(Integer accuracy) {
-        this.accuracy = accuracy;
+        return "Арбалетчик"+ " " + this.name + " |Hp - " + this.hp;
     }
 
 }

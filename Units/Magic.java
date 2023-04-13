@@ -18,7 +18,7 @@ public class Magic extends MagicHero {
 
     @Override
     public String getInfo() {
-        return "Маг"+ " " + this.name + "  " + coordinata.getX() + "," + coordinata.getY();
+        return "Маг"+ " " + this.name + " Hp - " + this.hp;
     }
 
     

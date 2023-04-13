@@ -12,14 +12,14 @@ public class Spearman extends BaseHero{
     }
 
     public Spearman(String name, Integer x, Integer y) {
-        super(10, 10, 4,3, 5, 4, 1, name,x,y);
+        super(11, 111, 4,3, 5, 4, 1, name,x,y);
         this.coordinata.setX(x);
         this.coordinata.setY(y);
     }
     
     @Override
     public String getInfo() {
-        return "Копейщик"+ " " + this.name + "  " + coordinata.getX() + "," + coordinata.getY();
+        return "Копейщик"+ " " + this.name + " |Hp - " + this.hp;
     }
 
     @Override
@@ -45,7 +45,5 @@ public class Spearman extends BaseHero{
                 this.agility--;
             }
         }
-    }
-
-    
+    }  
 }

@@ -29,21 +29,4 @@ public abstract class ShooterHero extends BaseHero{
         }
         
     }
-
-    public Integer getBulletCount() {
-        return bulletCount;
-    }
-
-    public Integer getRange() {
-        return range;
-    }
-
-    public Integer getAccuracy() {
-        return accuracy;
-    }
-
-    
-
-
-    
 }

@@ -61,9 +61,6 @@ public abstract class BaseHero implements Actions{
             if ((this.getDistance(enemy) < minDist) && enemy.isAlive()) {
                 minDist = this.getDistance(enemy);
                 closestEnemy = enemy;
-                System.out.println("Нашел ближайшего, расстояние от" + enemy.getInfo() + " до "+ this.getInfo() + "  " + this.getDistance(enemy));
-
-
             }
         }
         
@@ -101,10 +98,14 @@ public abstract class BaseHero implements Actions{
     }
 
     
-
-    public float getHp() {
-        return hp;
+    @Override
+    public String getInfo() {
+        return " ";
     }
+
+    // public float getHp() {
+    //     return hp;
+    // }
 
     public String getName() {
         return name;
@@ -118,41 +119,12 @@ public abstract class BaseHero implements Actions{
         return power;
     }
 
-    public Integer getAgility() {
-        return agility;
-    }
+    // public Integer getAgility() {
+    //     return agility;
+    // }
 
     public Integer getSpeed() {
         return speed;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setHp(Integer hp) {
-        this.hp = hp;
-    }
-
-    public void setPower(Integer power) {
-        this.power = power;
-    }
-
-    public void setAgility(Integer agility) {
-        this.agility = agility;
-    }
-
-    public void setSpeed(Integer speed) {
-        this.speed = speed;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
-
-
-    public float getMaxHp() {
-        return maxHp;
     }
 
     public float getDamage() {
